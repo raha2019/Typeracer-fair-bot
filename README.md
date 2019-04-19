@@ -1,2 +1,2 @@
 # Typeracer-fair-bot
-It is not cheating if you are still typing. 
+It's not cheating if you are still typing. 
