@@ -2,6 +2,7 @@ from pynput.keyboard import Key, Controller
 from PIL import ImageGrab
 from PIL import Image
 import time
+import datetime
 import pytesseract
 import sys
 reload(sys)
@@ -16,88 +17,109 @@ keyboard = Controller()
 def Character_Detection():
     if 'A' in output:
         print("A")
-        keyboard.press('A')
-        keyboard.release('A')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('a')
+            keyboard.release('a')
     elif "B" in output:
         print("B")
-        keyboard.press('B')
-        keyboard.release('B')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('b')
+            keyboard.release('b')
     elif "C" in output:
         print("C")
-        keyboard.press('C')
-        keyboard.release('C')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('c')
+            keyboard.release('c')
     elif "D" in output:
         print("D")
-        keyboard.press('D')
-        keyboard.release('D')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('d')
+            keyboard.release('d')
     elif "E" in output:
         print("E")
-        keyboard.press('E')
-        keyboard.release('E')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('e')
+            keyboard.release('e')
     elif "F" in output:
         print("F")
-        keyboard.press('F')
-        keyboard.release('F')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('f')
+            keyboard.release('f')
     elif "G" in output:
         print("G")
-        keyboard.press('G')
-        keyboard.release('G')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('g')
+            keyboard.release('g')
     elif "H" in output:
         print("H")
-        keyboard.press('H')
-        keyboard.release('H')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('h')
+            keyboard.release('h')
     elif "I" in output:
         print("I")
-        keyboard.press('I')
-        keyboard.release('I')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('i')
+            keyboard.release('i')
     elif "J" in output:
         print("J")
-        keyboard.press('J')
-        keyboard.release('J')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('j')
+            keyboard.release('j')
     elif "K" in output:
         print("K")
-        keyboard.press('K')
-        keyboard.release('K')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('k')
+            keyboard.release('k')
     elif "L" in output:
         print("L")
-        keyboard.press('L')
-        keyboard.release('L')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('l')
+            keyboard.release('l')
     elif "M" in output:
         print("M")
-        keyboard.press('M')
-        keyboard.release('M')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('m')
+            keyboard.release('m')
     elif "N" in output:
         print("N")
-        keyboard.press('N')
-        keyboard.release('N')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('n')
+            keyboard.release('n')
     elif "O" in output:
         print("O")
-        keyboard.press('O')
-        keyboard.release('O')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('o')
+            keyboard.release('o')
     elif "P" in output:
         print("P")
-        keyboard.press('P')
-        keyboard.release('P')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('')
+            keyboard.release('p')
     elif "Q" in output:
         print("Q")
-        keyboard.press('Q')
-        keyboard.release('Q')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('q')
+            keyboard.release('q')
     elif "R" in output:
         print("R")
-        keyboard.press('R')
-        keyboard.release('R')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('r')
+            keyboard.release('r')
     elif "S" in output:
         print("S")
-        keyboard.press('S')
-        keyboard.release('S')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('s')
+            keyboard.release('s')
     elif "T" in output:
         print("T")
-        keyboard.press('T')
-        keyboard.release('T')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('t')
+            keyboard.release('t')
     elif "U" in output:
         print("U")
-        keyboard.press('U')
-        keyboard.release('U')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('u')
+            keyboard.release('u')
     elif "V" in output:
         print("V")
         with keyboard.pressed(Key.shift):
@@ -105,12 +127,14 @@ def Character_Detection():
             keyboard.release('v')
     elif "W" in output:
         print("W")
-        keyboard.press('W')
-        keyboard.release('W')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('w')
+            keyboard.release('w')
     elif "X" in output:
         print("X")
-        keyboard.press('X')
-        keyboard.release('X')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('x')
+            keyboard.release('x')
     elif "Y" in output:
         print("Y")
         with keyboard.pressed(Key.shift):
@@ -118,8 +142,9 @@ def Character_Detection():
             keyboard.release('y')
     elif "Z" in output:
         print("Z")
-        keyboard.press('Z')
-        keyboard.release('Z')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('z')
+            keyboard.release('z')
     elif "a" in output:
         print("a")
         keyboard.press('a')
@@ -387,11 +412,19 @@ while True:
     #im.show() #if you want to crash you computer, uncomment this
     input = "output.png"
     text = pytesseract.image_to_string(Image.open(input))
-
-    #add a log for all the sentences and input files
-
+    text_file = open("Output.txt", "w")
+    now = datetime.datetime.now()
+    current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+    with open("Output.txt", "w") as text_file:
+        text_file.write(text)
+        text_file.write(current_time)
+    text_file.close()
+    y = 0
     x = 0
-    while x<40:
-        output = text[x] #Use a different loop, bug
-        Character_Detection()
-        x += 1
+    while y<40:
+            output = text[x] #fix this problem
+            Character_Detection()
+            x += 1
+            y += 1
+aanothingaa
+            print("lols")
