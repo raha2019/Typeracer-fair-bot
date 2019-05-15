@@ -1,4 +1,3 @@
-import re
 from PIL import ImageGrab
 from PIL import Image
 import time
@@ -199,15 +198,15 @@ def Character_Detection():
 
 while True:
     time.sleep(2)
-    im = ImageGrab.grab(bbox=(925,750,2175,835)) #adjust for your screen
-    print("2")
-    im.save('output.png')
-    #im.show() #if you want to crash you computer and see the images 
+    #im = ImageGrab.grab(bbox=(925,750,2175,835)) #adjust for your screen
+    #print("2")
+    #im.save('output.png')
+    #im.show() #if you want to crash you computer and see the images
     input = "output.png"
-    output = pytesseract.image_to_string(Image.open(input))
-    text = "Every artist is a man who has freed himself"
+    text = pytesseract.image_to_string(Image.open(input))
+    #text = "Every artist is a man who has freed himself"
     x = 0
-    while x<43:
+    while x<40:
         output = text[x]
         Character_Detection()
         x += 1
