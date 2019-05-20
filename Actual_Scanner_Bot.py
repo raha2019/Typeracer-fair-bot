@@ -405,26 +405,32 @@ def Character_Detection():
         print("nothing")
 
 while True:
-    time.sleep(2)
-    im = ImageGrab.grab(bbox=(925,750,2175,835)) #adjust for your screen
-    print("2")
-    im.save('output.png')
-    #im.show() #if you want to crash you computer, uncomment this
-    input = "output.png"
-    text = pytesseract.image_to_string(Image.open(input))
-    text_file = open("Output.txt", "w")
-    now = datetime.datetime.now()
-    current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-    with open("Output.txt", "w") as text_file:
-        text_file.write(text)
-        text_file.write(current_time)
-    text_file.close()
-    y = 0
-    x = 0
-    while y<40:
-            output = text[x] #fix this problem
-            Character_Detection()
-            x += 1
-            y += 1
-aanothingaa
-            print("lols")
+        time.sleep(2)
+        im = ImageGrab.grab(bbox=(925,750,2175,835)) #adjust for your screen
+        print("2")
+        im.save('output.png')
+        #im.show() #if you want to crash you computer, uncomment this
+        input = "output.png"
+        text = pytesseract.image_to_string(Image.open(input))
+        text_file = open("Output.txt", "a")
+        now = datetime.datetime.now()
+        current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+        with open("Output.txt", "a") as text_file:
+            text_file.write(text + current_time + '\n')
+            #text_file.write(current_time)
+        text_file.close()
+        x = 0
+        output = text[x]
+        x = 1 
+        if
+
+
+        else
+
+
+        while x<40:
+            output = text[x] #fix this problem use if or else
+            if x<40:
+                x += 1
+            else:
+                print("lols")
