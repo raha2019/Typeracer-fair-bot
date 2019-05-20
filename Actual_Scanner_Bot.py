@@ -419,18 +419,12 @@ while True:
             text_file.write(text + current_time + '\n')
             #text_file.write(current_time)
         text_file.close()
+        y = (len(text))
         x = 0
-        output = text[x]
-        x = 1 
-        if
-
-
-        else
-
-
-        while x<40:
-            output = text[x] #fix this problem use if or else
-            if x<40:
+        while x<y:
+            if x<y:
+                output = text[x] #fix this problem use if or else
+                Character_Detection()
                 x += 1
             else:
                 print("lols")
