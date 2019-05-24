@@ -93,7 +93,7 @@ def Character_Detection():
     elif "P" in output:
         print("P")
         with keyboard.pressed(Key.shift):
-            keyboard.press('')
+            keyboard.press('p')
             keyboard.release('p')
     elif "Q" in output:
         print("Q")
@@ -287,60 +287,72 @@ def Character_Detection():
         keyboard.release('9')
     elif "!" in output:
         print("!")
-        keyboard.press('!')
-        keyboard.release('!')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('1')
+            keyboard.release('1')
     elif "@" in output:
-        print("@")
-        keyboard.press('@')
-        keyboard.release('@')
+        with keyboard.pressed(Key.shift):
+            print("@")
+            keyboard.press('2')
+            keyboard.release('2')
     elif "#" in output:
         print("#")
-        keyboard.press('#')
-        keyboard.release('#')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('3')
+            keyboard.release('3')
     elif "$" in output:
         print("$")
-        keyboard.press('$')
-        keyboard.release('$')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('4')
+            keyboard.release('4')
     elif "%" in output:
         print("%")
-        keyboard.press('%')
-        keyboard.release('%')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('5')
+            keyboard.release('5')
     elif "^" in output:
         print("^")
-        keyboard.press('^')
-        keyboard.release('^')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('6')
+            keyboard.release('6')
     elif "&" in output:
         print("&")
-        keyboard.press('&')
-        keyboard.release('&')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('7')
+            keyboard.release('7')
     elif "*" in output:
         print("*")
-        keyboard.press('*')
-        keyboard.release('*')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('8')
+            keyboard.release('8')
     elif "(" in output:
         print("(")
-        keyboard.press('(')
-        keyboard.release('(')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('9')
+            keyboard.release('9')
     elif ")" in output:
         print(")")
-        keyboard.press(')')
-        keyboard.release(')')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('0')
+            keyboard.release('0')
     elif "-" in output:
         print("-")
         keyboard.press('-')
         keyboard.release('-')
     elif "_" in output:
         print("_")
-        keyboard.press('_')
-        keyboard.release('_')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('-')
+            keyboard.release('-')
     elif "=" in output:
         print("=")
         keyboard.press('=')
         keyboard.release('=')
     elif "+" in output:
         print("+")
-        keyboard.press('+')
-        keyboard.release('+')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('=')
+            keyboard.release('=')
     elif "[" in output:
         print("[")
         keyboard.press('[')
@@ -351,16 +363,19 @@ def Character_Detection():
         keyboard.release(']')
     elif "{" in output:
         print("{")
-        keyboard.press('{')
-        keyboard.release('{')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('[')
+            keyboard.release('[')
     elif "}" in output:
         print("}")
-        keyboard.press('}')
-        keyboard.release('}')
+        with keyboard.pressed(Key.shift):
+            keyboard.press(']')
+            keyboard.release(']')
     elif ":" in output:
         print(":")
-        keyboard.press(':')
-        keyboard.release(':')
+        with keyboard.pressed(Key.shift):
+            keyboard.press(';')
+            keyboard.release(';')
     elif ";" in output:
         print(";")
         keyboard.press(';')
@@ -379,16 +394,19 @@ def Character_Detection():
         keyboard.release('.')
     elif "<" in output:
         print("<")
-        keyboard.press('<')
-        keyboard.release('<')
+        with keyboard.pressed(Key.shift):
+            keyboard.press(',')
+            keyboard.release(',')
     elif ">" in output:
         print(">")
-        keyboard.press('>')
-        keyboard.release('>')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('.')
+            keyboard.release('.')
     elif "?" in output:
         print("?")
-        keyboard.press('?')
-        keyboard.release('?')
+        with keyboard.pressed(Key.shift):
+            keyboard.press('/')
+            keyboard.release('/')
     elif "'" in output:
         print(" ' ")
         keyboard.press("\'")
@@ -401,11 +419,20 @@ def Character_Detection():
         print("space")
         keyboard.press(Key.space)
         keyboard.release(Key.space)
+    elif "|" in output:
+        print("|")
+        with keyboard.pressed(Key.shift):
+            keyboard.press('i')
+            keyboard.release('i')
     else:
         print("nothing")
 
+def Space():
+    keyboard.press(Key.space)
+    keyboard.release(Key.space)
+
 while True:
-        time.sleep(2)
+        time.sleep(1)
         im = ImageGrab.grab(bbox=(925,750,2175,835)) #adjust for your screen
         print("2")
         im.save('output.png')
@@ -428,3 +455,4 @@ while True:
                 x += 1
             else:
                 print("lols")
+        Space()
